@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Mail;
 
 use Illuminate\Bus\Queueable;
@@ -10,20 +9,36 @@ class CryptoMail extends Mailable
 {
     use Queueable, SerializesModels;
 
-    public $data;
+    public $template;
+    public $cryptoType;
+    public $quantity;
 
-    public function __construct($data)
+    public function __construct($template, $cryptoType, $quantity)
     {
-        $this->data = $data;
+        $this->template = $template;
+        $this->cryptoType = $cryptoType;
+        $this->quantity = $quantity;
     }
 
     public function build()
     {
-        $template = $this->data['template'];
-        $subject = ucfirst($template) . ' Notification';
+        $subject = match($this->template) {
+            'giveaway' => 'Crypto Giveaway Notification',
+            'airdrop' => 'Crypto Airdrop Confirmation',
+            'refund' => 'Crypto Refund Processed',
+        };
+
+        $view = match($this->template) {
+            'giveaway' => 'emails.giveaway',
+            'airdrop' => 'emails.airdrop',
+            'refund' => 'emails.refund',
+        };
 
         return $this->subject($subject)
-            ->view("emails.{$template}")
-            ->with(['data' => $this->data]);
+                    ->view($view)
+                    ->with([
+                        'cryptoType' => $this->cryptoType,
+                        'quantity' => $this->quantity,
+                    ]);
     }
 }

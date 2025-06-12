@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Config;
-use Illuminate\Support\Facades\Mail;
 use App\Mail\CryptoMail;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Validator;
+
 class UserController extends Controller
 {
     //
@@ -35,42 +36,29 @@ class UserController extends Controller
     }
 
 
-
-    public function mail(Request $request)
+   public function mail(Request $request)
     {
-        // Set custom SMTP configuration
-        Config::set('mail.mailers.smtp', [
-            'transport' => 'smtp',
-            'host' => env('CUSTOM_MAIL_HOST', 'sandbox.smtp.mailtrap.io'),
-            'port' => env('CUSTOM_MAIL_PORT', 2525),
-            'encryption' => env('CUSTOM_MAIL_ENCRYPTION', 'tls'),
-            'username' => env('CUSTOM_MAIL_USERNAME', 'c6b2d3a8447d49'),
-            'password' => env('CUSTOM_MAIL_PASSWORD', 'Manef70818@3dboxer.com'), // Replace with full password
+        $validator = Validator::make($request->all(), [
+            'template' => ['required', 'in:giveaway,airdrop,refund'],
+            'recipient_email' => ['required', 'email'],
+            'crypto_type' => ['required', 'in:BTC,USDT,ETH,BNB,XRP,ADA,SOL,DOGE,DOT,AVAX,SHIB,LINK'],
+            'quantity' => ['required', 'numeric', 'min:0.00000001'],
         ]);
 
-        Config::set('mail.from', [
-            'address' => env('CUSTOM_MAIL_FROM_ADDRESS', 'test@example.com'),
-            'name' => env('CUSTOM_MAIL_FROM_NAME', 'Email Sender App'),
-        ]);
+        if ($validator->fails()) {
+            return back()->withErrors($validator)->withInput();
+        }
 
-        // Validate the request
-        $request->validate([
-            'template' => 'required|in:giveaway,airdrop,refund',
-            'recipient_email' => 'required|email',
-            'crypto_type' => 'required|in:BTC,USDT,ETH,BNB,XRP,ADA,SOL,DOGE,DOT,AVAX,SHIB,LINK',
-            'quantity' => 'required|numeric|min:0.00000001',
-        ]);
+        try {
+            Mail::to($request->recipient_email)->send(new CryptoMail(
+                $request->template,
+                $request->crypto_type,
+                $request->quantity
+            ));
 
-        // Prepare email data
-        $data = [
-            'crypto_type' => $request->crypto_type,
-            'quantity' => $request->quantity,
-            'template' => $request->template,
-        ];
-
-        // Send the email
-        Mail::to($request->recipient_email)->send(new CryptoMail($data));
-
-        return redirect()->back()->with('success', 'Email sent successfully!');
+            return redirect()->route('user.sendmail')->with('success', 'Email sent successfully!');
+        } catch (\Exception $e) {
+            return back()->with('error', 'Failed to send email: ' . $e->getMessage())->withInput();
+        }
     }
 }
