@@ -5,7 +5,7 @@
                 Send Mail
             </p>
         </div>
-        <form method="POST" action="{{ route('send.mail') }}">
+        <form method="POST" action="{{ route('user.send') }}">
             @csrf
             <div class="flex max-w-[480px] flex-wrap items-end gap-4 px-4 py-3">
                 <label class="flex flex-col min-w-40 flex-1">
