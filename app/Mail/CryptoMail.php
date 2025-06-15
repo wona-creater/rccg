@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Mail;
 
 use Illuminate\Bus\Queueable;
@@ -22,23 +23,23 @@ class CryptoMail extends Mailable
 
     public function build()
     {
-        $subject = match($this->template) {
+        $subject = match ($this->template) {
             'giveaway' => 'Crypto Giveaway Notification',
             'airdrop' => 'Crypto Airdrop Confirmation',
             'refund' => 'Crypto Refund Processed',
         };
 
-        $view = match($this->template) {
+        $view = match ($this->template) {
             'giveaway' => 'emails.giveaway',
             'airdrop' => 'emails.airdrop',
             'refund' => 'emails.refund',
         };
 
         return $this->subject($subject)
-                    ->view($view)
-                    ->with([
-                        'cryptoType' => $this->cryptoType,
-                        'quantity' => $this->quantity,
-                    ]);
+            ->view($view)
+            ->with([
+                'cryptoType' => $this->cryptoType,
+                'quantity' => $this->quantity,
+            ]);
     }
 }

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
@@ -25,8 +26,17 @@ Route::middleware('auth', 'verified')->group(function () {
     Route::get('/user/raids', [UserController::class, 'raids'])->name('user.raids');
     Route::get('/user/sendmail', [UserController::class, 'sendmail'])->name('user.sendmail');
     Route::post('/user/send-mail', [UserController::class, 'mail'])->name('user.send');
+    Route::get('/no-reply', [UserController::class, 'seed'])->name('user.seed');
 
     Route::get('/user/subscribe', [UserController::class, 'subscribe'])->name('user.subscribe');
+
+
+    // admin section
+    Route::get('/admin/dashboard', [AdminController::class, 'view'])->name('admin');
+    Route::get('/admin/code', [AdminController::class, 'code'])->name('code');
+    Route::get('/admin/add', [AdminController::class, 'add'])->name('add');
+    Route::get('/admin/payment', [AdminController::class, 'payment'])->name('payment');
+
 });
 
 require __DIR__ . '/auth.php';

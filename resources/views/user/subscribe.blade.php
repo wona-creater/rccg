@@ -7,57 +7,8 @@
             </p>
         </div>
         <div class="grid grid-cols-[repeat(auto-fit,minmax(228px,1fr))] gap-2.5 px-4 py-3 @3xl:grid-cols-4">
-            <div class="flex flex-1 flex-col gap-4 rounded-lg border border-solid border-[#d0dbe7] bg-slate-50 p-6">
-                <div class="flex flex-col gap-1">
-                    <h1 class="text-[#0e141b] text-base font-bold leading-tight">
-                        Basic
-                    </h1>
-                    <p class="flex items-baseline gap-1 text-[#0e141b]">
-                        <span class="text-[#0e141b] text-4xl font-black leading-tight tracking-[-0.033em]">$19</span>
-                        <span class="text-[#0e141b] text-base font-bold leading-tight">/month</span>
-                    </p>
-                </div>
-                <button
-                    class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-[#e7edf3] text-[#0e141b] text-sm font-bold leading-normal tracking-[0.015em]">
-                    <span class="truncate">Choose Basic</span>
-                </button>
-                <div class="flex flex-col gap-2">
-                    <div class="text-[13px] font-normal leading-normal flex gap-3 text-[#0e141b]">
-                        <div class="text-[#0e141b]" data-icon="Check" data-size="20px" data-weight="regular">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor"
-                                viewBox="0 0 256 256">
-                                <path
-                                    d="M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z">
-                                </path>
-                            </svg>
-                        </div>
-                        Up to 1,000 subscribers
-                    </div>
-                    <div class="text-[13px] font-normal leading-normal flex gap-3 text-[#0e141b]">
-                        <div class="text-[#0e141b]" data-icon="Check" data-size="20px" data-weight="regular">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor"
-                                viewBox="0 0 256 256">
-                                <path
-                                    d="M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z">
-                                </path>
-                            </svg>
-                        </div>
-                        Unlimited emails
-                    </div>
-                    <div class="text-[13px] font-normal leading-normal flex gap-3 text-[#0e141b]">
-                        <div class="text-[#0e141b]" data-icon="Check" data-size="20px" data-weight="regular">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor"
-                                viewBox="0 0 256 256">
-                                <path
-                                    d="M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z">
-                                </path>
-                            </svg>
-                        </div>
-                        Basic reporting
-                    </div>
-                </div>
-            </div>
-            <div class="flex flex-1 flex-col gap-4 rounded-lg border border-solid border-[#d0dbe7] bg-slate-50 p-6">
+
+            <div class="flex flex-1 flex-col gap-4 rounded-lg border border-solid border-[#d0dbe7] bg-slate-50 p-6 m-4">
                 <div class="flex flex-col gap-1">
                     <div class="flex items-center justify-between">
                         <h1 class="text-[#0e141b] text-base font-bold leading-tight">
@@ -69,11 +20,11 @@
                         </p>
                     </div>
                     <p class="flex items-baseline gap-1 text-[#0e141b]">
-                        <span class="text-[#0e141b] text-4xl font-black leading-tight tracking-[-0.033em]">$49</span>
+                        <span class="text-[#0e141b] text-4xl font-black leading-tight tracking-[-0.033em]">35k</span>
                         <span class="text-[#0e141b] text-base font-bold leading-tight">/month</span>
                     </p>
                 </div>
-                <button
+                <button id="chooseProBtn"
                     class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-[#e7edf3] text-[#0e141b] text-sm font-bold leading-normal tracking-[0.015em]">
                     <span class="truncate">Choose Pro</span>
                 </button>
@@ -87,123 +38,102 @@
                                 </path>
                             </svg>
                         </div>
-                        Up to 5,000 subscribers
-                    </div>
-                    <div class="text-[13px] font-normal leading-normal flex gap-3 text-[#0e141b]">
-                        <div class="text-[#0e141b]" data-icon="Check" data-size="20px" data-weight="regular">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor"
-                                viewBox="0 0 256 256">
-                                <path
-                                    d="M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z">
-                                </path>
-                            </svg>
-                        </div>
                         Unlimited emails
-                    </div>
-                    <div class="text-[13px] font-normal leading-normal flex gap-3 text-[#0e141b]">
-                        <div class="text-[#0e141b]" data-icon="Check" data-size="20px" data-weight="regular">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor"
-                                viewBox="0 0 256 256">
-                                <path
-                                    d="M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z">
-                                </path>
-                            </svg>
-                        </div>
-                        Advanced reporting
-                    </div>
-                    <div class="text-[13px] font-normal leading-normal flex gap-3 text-[#0e141b]">
-                        <div class="text-[#0e141b]" data-icon="Check" data-size="20px" data-weight="regular">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor"
-                                viewBox="0 0 256 256">
-                                <path
-                                    d="M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z">
-                                </path>
-                            </svg>
-                        </div>
-                        A/B testing
                     </div>
                 </div>
             </div>
-            <div class="flex flex-1 flex-col gap-4 rounded-lg border border-solid border-[#d0dbe7] bg-slate-50 p-6">
-                <div class="flex flex-col gap-1">
-                    <h1 class="text-[#0e141b] text-base font-bold leading-tight">
-                        Enterprise
-                    </h1>
-                    <p class="flex items-baseline gap-1 text-[#0e141b]">
-                        <span class="text-[#0e141b] text-4xl font-black leading-tight tracking-[-0.033em]">$99</span>
-                        <span class="text-[#0e141b] text-base font-bold leading-tight">/month</span>
-                    </p>
-                </div>
-                <button
-                    class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-[#e7edf3] text-[#0e141b] text-sm font-bold leading-normal tracking-[0.015em]">
-                    <span class="truncate">Choose Enterprise</span>
-                </button>
-                <div class="flex flex-col gap-2">
-                    <div class="text-[13px] font-normal leading-normal flex gap-3 text-[#0e141b]">
-                        <div class="text-[#0e141b]" data-icon="Check" data-size="20px" data-weight="regular">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px"
-                                fill="currentColor" viewBox="0 0 256 256">
-                                <path
-                                    d="M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z">
-                                </path>
-                            </svg>
-                        </div>
-                        Unlimited subscribers
+
+            <div id="paymentModal" class="modal">
+                <div class="modal-content">
+                    <h2 class="text-xl font-bold mb-4">Payment Details</h2>
+                    <div class="mb-4">
+                        <h3 class="text-lg font-semibold">Bank Account</h3>
+
+                        <p><strong>Bank:</strong> UBA </p>
+
+                        <p><strong>Bank Name:</strong> Osas King <button class="copy-btn"
+                                onclick="copyToClipboard('Example Bank', event)">Copy</button></p>
+
+                        <p><strong>Account Number:</strong> 1234567890 <button class="copy-btn"
+                                onclick="copyToClipboard('1234567890', event)">Copy</button></p>
+
+
                     </div>
-                    <div class="text-[13px] font-normal leading-normal flex gap-3 text-[#0e141b]">
-                        <div class="text-[#0e141b]" data-icon="Check" data-size="20px" data-weight="regular">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px"
-                                fill="currentColor" viewBox="0 0 256 256">
-                                <path
-                                    d="M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z">
-                                </path>
-                            </svg>
-                        </div>
-                        Unlimited emails
+                    <div class="mb-4">
+                        <h3 class="text-lg font-semibold">Cryptocurrency</h3>
+                        <p><strong>Bitcoin (BTC):</strong> bc1qxy2kgdygjrsqtzq2n0yrf2493p83kkfjhx0wlh <button
+                                class="copy-btn"
+                                onclick="copyToClipboard('bc1qxy2kgdygjrsqtzq2n0yrf2493p83kkfjhx0wlh', event)">Copy</button>
+                        </p>
+
+                        <p><strong>Ethereum (ETH):ERC20</strong> 0x1234567890abcdef1234567890abcdef12345678 <button
+                                class="copy-btn"
+                                onclick="copyToClipboard('0x1234567890abcdef1234567890abcdef12345678', event)">Copy</button>
+                        </p>
+
                     </div>
-                    <div class="text-[13px] font-normal leading-normal flex gap-3 text-[#0e141b]">
-                        <div class="text-[#0e141b]" data-icon="Check" data-size="20px" data-weight="regular">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px"
-                                fill="currentColor" viewBox="0 0 256 256">
-                                <path
-                                    d="M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z">
-                                </path>
-                            </svg>
-                        </div>
-                        Advanced reporting
-                    </div>
-                    <div class="text-[13px] font-normal leading-normal flex gap-3 text-[#0e141b]">
-                        <div class="text-[#0e141b]" data-icon="Check" data-size="20px" data-weight="regular">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px"
-                                fill="currentColor" viewBox="0 0 256 256">
-                                <path
-                                    d="M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z">
-                                </path>
-                            </svg>
-                        </div>
-                        A/B testing
-                    </div>
-                    <div class="text-[13px] font-normal leading-normal flex gap-3 text-[#0e141b]">
-                        <div class="text-[#0e141b]" data-icon="Check" data-size="20px" data-weight="regular">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px"
-                                fill="currentColor" viewBox="0 0 256 256">
-                                <path
-                                    d="M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z">
-                                </path>
-                            </svg>
-                        </div>
-                        Dedicated support
-                    </div>
+                    <button id="closeModalBtn" class="mt-4 px-4 py-2 bg-gray-200 rounded-lg">Close</button>
                 </div>
             </div>
+
+            <script>
+                const chooseProBtn = document.getElementById('chooseProBtn');
+                const paymentModal = document.getElementById('paymentModal');
+                const closeModalBtn = document.getElementById('closeModalBtn');
+
+                chooseProBtn.addEventListener('click', (event) => {
+                    event.stopPropagation();
+                    paymentModal.style.display = 'flex';
+                });
+
+                closeModalBtn.addEventListener('click', (event) => {
+                    event.stopPropagation();
+                    paymentModal.style.display = 'none';
+                });
+
+                window.addEventListener('click', (event) => {
+                    if (event.target === paymentModal) {
+                        paymentModal.style.display = 'none';
+                    }
+                });
+
+                function copyToClipboard(text, event) {
+                    event.stopPropagation();
+                    if (navigator.clipboard && window.isSecureContext) {
+                        navigator.clipboard.writeText(text).then(() => {
+                            alert('Copied to clipboard!');
+                        }).catch(err => {
+                            console.error('Failed to copy: ', err);
+                            fallbackCopy(text);
+                        });
+                    } else {
+                        fallbackCopy(text);
+                    }
+                }
+
+                function fallbackCopy(text) {
+                    const textArea = document.createElement('textarea');
+                    textArea.value = text;
+                    document.body.appendChild(textArea);
+                    textArea.select();
+                    try {
+                        document.execCommand('copy');
+                        alert('Copied to clipboard!');
+                    } catch (err) {
+                        console.error('Fallback copy failed: ', err);
+                        alert('Failed to copy. Please copy manually.');
+                    }
+                    document.body.removeChild(textArea);
+                }
+            </script>
+
         </div>
 
         <!-- Payment Code Section -->
         <div class="px-4 py-6">
             <h2 class="text-[#0e141b] text-lg font-bold leading-tight tracking-[-0.015em] pb-4">Activate Subscription
             </h2>
-            <form action="" method="POST"
-                class="flex flex-col gap-4 max-w-[480px]">
+            <form action="" method="POST" class="flex flex-col gap-4 max-w-[480px]">
                 @csrf
                 <div class="flex flex-col gap-2">
                     <label for="payment_code" class="text-[#0e141b] text-sm font-medium leading-normal">Payment
@@ -215,8 +145,8 @@
                         <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
                     @enderror
                 </div>
-                
-                <button type="submit"
+
+                <button
                     class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-[#1976d2] text-white text-sm font-bold leading-normal tracking-[0.015em]">
                     <span class="truncate">Confirm Payment</span>
                 </button>
